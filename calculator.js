@@ -1,5 +1,7 @@
-function operacion(numeros){
-    console.log(numeros);
-}
+function operacion(){
+    
+    let respuesta = Number(document.getElementById("numero").value);
 
-operacion(5 + 4);
+    document.getElementById("resultado").innerHTML = "Resultado: " + String(respuesta);
+    
+}
