@@ -1,7 +1,8 @@
 function operacion(){
     
-    let respuesta = Number(document.getElementById("numero").value);
+    let valor = (document.getElementById("numero")).value;
+    let sol = document.getElementById("solucion");
+    console.log(valor);
 
-    document.getElementById("resultado").innerHTML = "Resultado: " + String(respuesta);
-    
+    sol.innerHTML = valor;
 }
