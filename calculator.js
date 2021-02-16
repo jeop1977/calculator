@@ -1,8 +1,9 @@
 function operacion(){
     
     let valor = (document.getElementById("numero")).value;
-    let sol = document.getElementById("solucion");
+    
     console.log(valor);
+    console.log(eval(valor));
 
-    sol.innerHTML = valor;
+    solucion.innerHTML = eval(valor);
 }
