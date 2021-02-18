@@ -2,8 +2,16 @@ function operacion(){
     
     let valor = (document.getElementById("numero")).value;
     
-    console.log(valor);
-    console.log(eval(valor));
+    let operador = valor.indexOf("+");
 
-    solucion.innerHTML = eval(valor);
+    let num_1 = valor.substring(0, operador);
+    let num_2 = valor.substring(operador+1);
+
+    let num1 = Number(num_1);
+    let num2 = Number(num_2);
+    
+    let res = num1+num2;
+    console.log(res);
+
+    solucion.innerHTML = res;
 }
