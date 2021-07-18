@@ -1,8 +1,40 @@
 function operacion(){
     
     let valor = (document.getElementById("numero")).value;
+
+    let cifra = [];
+    let oper = [];
+
+    if(valor.indexOf("+") != -1 || valor.indexOf("-") != -1 || valor.indexOf("*") != -1 || valor.indexOf("/") != -1){
+        
+        let residuo = valor;
+        let x = 0;
+        let signo = ["+", "-", "*", "/"];
+        let puesto = [];
+        
+        while(residuo.indexOf("+") !== -1 || residuo.indexOf("-") !== -1 || residuo.indexOf("*") !== -1 || residuo.indexOf("/") !== -1){
+
+            let lugar = 0;
+
+            for(let i = 0; i < 4; i++){
+                if(residuo.indexOf(signo[i]) > 0){
+                    puesto[lugar] = residuo.indexOf(signo[i]);
+                    lugar++
+                }
+            }
+            
+            let posicion = Math.min(...puesto);
+            cifra[x] = residuo.substring(0, posicion);
+            oper[x] = residuo.substring(posicion, posicion + 1);
+            residuo = residuo.substring(posicion + 1);
+            x++;
+        }
+        
+    } else {
+        solucion.innerHTML = "ERROR!!!";
+    }
     
-    
+    /*
     if (valor.indexOf("+") != -1){
 
         let operador = valor.indexOf("+");
@@ -58,4 +90,5 @@ function operacion(){
     } else {
         solucion.innerHTML = "ERROR!!!";
     }
+    */
 }
