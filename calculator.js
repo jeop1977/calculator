@@ -29,6 +29,23 @@ function operacion(){
             residuo = residuo.substring(posicion + 1);
             x++;
         }
+
+        cifra[x] = residuo;
+        residuo = Number(cifra[0]);
+
+        for(let i = 0; i < x; i++){
+            if(oper[i] == "+"){
+                residuo = residuo + Number(cifra[i + 1]);
+            } else if(oper[i] == "-"){
+                residuo = residuo - Number(cifra[i + 1]);
+            } else if(oper[i] == "*"){
+                residuo = residuo * Number(cifra[i + 1]);
+            } else if(oper[i] == "/"){
+                residuo = residuo / Number(cifra[i + 1]);
+            }
+        }
+
+        solucion.innerHTML = residuo;
         
     } else {
         solucion.innerHTML = "ERROR!!!";
